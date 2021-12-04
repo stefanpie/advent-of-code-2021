@@ -42,9 +42,6 @@ class BingoBoard:
             self.winner_loc[:, winner_col_idx] = 1
 
 
-
-
-
 class BingoGame:
     def __init__(self, input):
         self.input = input
@@ -68,13 +65,9 @@ class BingoGame:
         board_winners_last = list(map(lambda x: x.winner, self.boards))
         
         for i, d in enumerate(self.draws[:]):
-            # print(f"{i}: {d}")
 
             for b in self.boards:
                 b.marked[b.board == d] = 1
-            
-            # for b in self.boards:
-            #     print(b.marked)
 
             for b in self.boards:
                 b.check_winner()
