@@ -3,6 +3,10 @@ from pprint import pprint as pp
 from typing import OrderedDict
 import math
 
+import numpy as np
+from scipy.sparse import coo_matrix
+import matplotlib.pyplot as plt
+
 
 class Line:
     def __init__(self, id, input) -> None:
@@ -76,3 +80,13 @@ if __name__ == "__main__":
 
     part_2 = danger_count_2
     print(f"Part 2: {part_2}")
+
+    rows = [k[1] for k in ocean_map_2]
+    cols = [k[0] for k in ocean_map_2]
+    data = [len(ocean_map_2[k]) for k in ocean_map_2]
+
+    # m = coo_matrix((data, (rows, cols)))
+    # m = m.toarray().astype(int)
+    # print(m)
+    # plt.imshow(m)
+    # plt.show()
